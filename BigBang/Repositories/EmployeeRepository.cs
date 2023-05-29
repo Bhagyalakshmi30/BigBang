@@ -43,7 +43,7 @@ namespace BigBang.Repositories
         {
             try
             {
-                employee.CreatedDT = DateTime.UtcNow.ToString();
+                employee.Key = DateTime.UtcNow.ToString();
                 var emp = _employeeContext.Hotels.Find(employee.Hotel.HotelId);
                 employee.Hotel = emp;
                 _employeeContext.Add(employee);

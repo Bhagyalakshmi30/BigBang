@@ -46,7 +46,7 @@ namespace HotelManagement.Repositories
         {
             try
             {
-                hotel.CreatedDT = DateTime.UtcNow.ToString();
+                hotel.Key = DateTime.UtcNow.ToString();
                 _hotelContext.Hotels.Add(hotel);
                 _hotelContext.SaveChanges();
                 return hotel;

@@ -12,37 +12,37 @@ namespace BigBang.Controllers
     public class BookingsController : ControllerBase
     {
 
-        private readonly IBooking b;
-        public BookingsController(IBooking b)
+        private readonly IBooking book;
+        public BookingsController(IBooking book)
         {
-            this.b = b;
+            this.book = book;
         }
         [HttpGet]
         public IEnumerable<Booking> Get()
         {
-            return b.GetBooking();
+            return book.GetBooking();
         }
 
         [HttpGet("{BookingId}")]
         public Booking GetById(int BookingId)
         {
-            return b.GetBookingById(BookingId);
+            return book.GetBookingById(BookingId);
         }
 
         [HttpPost]
         public Booking PostBooking(Booking booking)
         {
-            return b.PostBooking(booking);
+            return book.PostBooking(booking);
         }
         [HttpPut("{BookingId}")]
         public Booking PutBooking(int BookingId, Booking booking)
         {
-            return b.PutBooking(BookingId, booking);
+            return book.PutBooking(BookingId, booking);
         }
         [HttpDelete("{BookingId}")]
         public Booking DeleteBooking(int BookingId)
         {
-            return b.DeleteBooking(BookingId);
+            return book.DeleteBooking(BookingId);
         }
     }
 }

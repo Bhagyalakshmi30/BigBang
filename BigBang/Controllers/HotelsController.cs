@@ -12,37 +12,37 @@ namespace BigBang.Controllers
     public class HotelsController : ControllerBase
     {
 
-        private readonly IHotel h;
-        public HotelsController(IHotel h)
+        private readonly IHotel hot;
+        public HotelsController(IHotel hot)
         {
-            this.h = h;
+            this.hot = hot;
         }
         [HttpGet]
         public IEnumerable<Hotel> Get()
         {
-            return h.GetHotel();
+            return hot.GetHotel();
         }
 
         [HttpGet("{HotelId}")]
         public Hotel GetById(int HotelId)
         {
-            return h.GetHotelById(HotelId);
+            return hot.GetHotelById(HotelId);
         }
 
         [HttpPost]
         public Hotel PostHotel(Hotel hotel)
         {
-            return h.PostHotel(hotel);
+            return hot.PostHotel(hotel);
         }
         [HttpPut("{HotelId}")]
         public Hotel PutHotel(int HotelId, Hotel hotel)
         {
-            return h.PutHotel(HotelId, hotel);
+            return hot.PutHotel(HotelId, hotel);
         }
         [HttpDelete("{HotelId}")]
         public Hotel DeleteHotel(int HotelId)
         {
-            return h.DeleteHotel(HotelId);
+            return hot.DeleteHotel(HotelId);
         }
     }
 }

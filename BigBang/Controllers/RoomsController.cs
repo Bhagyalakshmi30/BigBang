@@ -11,37 +11,37 @@ namespace BigBang.Controllers
     [ApiController]
     public class RoomsController : ControllerBase
     {
-        private readonly IRoom r;
+        private readonly IRoom rom;
         public RoomsController(IRoom r)
         {
-            this.r = r;
+            this.rom = rom;
         }
         [HttpGet]
         public IEnumerable<Room> Get()
         {
-            return r.GetRoom();
+            return rom.GetRoom();
         }
 
         [HttpGet("{RoomId}")]
         public Room GetById(int RoomId)
         {
-            return r.GetRoomById(RoomId);
+            return rom.GetRoomById(RoomId);
         }
 
         [HttpPost]
         public Room PostRoom(Room room)
         {
-            return r.PostRoom(room);
+            return rom.PostRoom(room);
         }
         [HttpPut("{RoomId}")]
         public Room PutRoom(int RoomId, Room room)
         {
-            return r.PutRoom(RoomId, room);
+            return rom.PutRoom(RoomId, room);
         }
         [HttpDelete("{RoomId}")]
         public Room DeleteRoom(int RoomId)
         {
-            return r.DeleteRoom(RoomId);
+            return rom.DeleteRoom(RoomId);
         }
     }
 }

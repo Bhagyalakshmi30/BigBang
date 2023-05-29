@@ -45,7 +45,7 @@ namespace BigBang.Repositories
         {
             try
             {
-                booking.CreatedDT = DateTime.UtcNow.ToString();
+                booking.Key = DateTime.UtcNow.ToString();
 
                 var hotel = _bookingContext.Hotels.Find(booking.Hotel.HotelId);
                 if (hotel == null)

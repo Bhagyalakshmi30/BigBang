@@ -42,7 +42,7 @@ namespace BigBang.Repositories
         {
             try
             {
-                room.CreatedDT = DateTime.UtcNow.ToString();
+                room.Key = DateTime.UtcNow.ToString();
                 var r = _roomContext.Hotels.Find(room.Hotel.HotelId);
                 room.Hotel = r;
                 _roomContext.Add(room);
